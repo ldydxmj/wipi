@@ -1,7 +1,7 @@
 export const config = {
   admin: { name: 'admin', password: 'admin' },
   mysql: {
-    host: '0.0.0.0',
+    host: '47.113.82.122',
     port: 3306,
     username: 'root',
     password: 'root',
