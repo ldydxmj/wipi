@@ -24,6 +24,7 @@ export class RolesGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     let token = request.headers.authorization;
+ 
 
     if (/Bearer/.test(token)) {
       // 不需要 Bearer，否则验证失败
@@ -31,7 +32,8 @@ export class RolesGuard implements CanActivate {
     }
 
     const user = this.jwtService.decode(token) as any;
-    const hasRole = roles.some(role => role === user.role);
+    const hasRole = roles.some(role => role === user&&user.role);
+
     return user && user.role && hasRole;
   }
 }

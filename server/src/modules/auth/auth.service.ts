@@ -16,7 +16,9 @@ export class AuthService {
   }
 
   async login(user: Partial<User>) {
+    console.log("AuthService -> login -> user", user)
     const data = await this.userService.login(user);
+    console.log("AuthService -> login -> data", data)
     const token = this.createToken({
       id: data.id,
       name: data.name,

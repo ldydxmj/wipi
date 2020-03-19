@@ -34,6 +34,11 @@ import { ViewModule } from './modules/view/view.module';
 import { View } from './modules/view/view.entity';
 // 搜索模块
 import { Search } from './modules/search/search.entity';
+// 增删改查模块
+import { Crud } from './modules/crud/crud.entity';
+
+import { CrudModule } from './modules/crud/crud.module';
+
 import { SearchModule } from './modules/search/search.module';
 // 配置文件
 import { config } from './config';
@@ -53,6 +58,7 @@ import { config } from './config';
         Setting,
         SMTP,
         Page,
+        Crud,
         View,
         Search,
       ],
@@ -70,6 +76,7 @@ import { config } from './config';
     PageModule,
     ViewModule,
     SearchModule,
+    CrudModule,
   ],
   controllers: [],
   providers: [],

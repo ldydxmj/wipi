@@ -26,9 +26,11 @@ export class ArticleController {
    * @param article
    */
   @Post()
-  @Roles('admin')
+  // @Roles('admin')
   @UseGuards(JwtAuthGuard)
   create(@Body() article) {
+  console.log("ArticleController -> create -> article", article)
+
     return this.articleService.create(article);
   }
 
@@ -112,10 +114,11 @@ export class ArticleController {
    * @param article
    */
   @Patch(':id')
-  @Roles('admin')
+  // @Roles('admin')
   @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.OK)
   updateById(@Param('id') id, @Body() article) {
+    console.log(id,'id')
     return this.articleService.updateById(id, article);
   }
 
